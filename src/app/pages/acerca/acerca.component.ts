@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InfoPaginaService } from 'src/app/services/info-pagina.service';
 
 @Component({
   selector: 'app-acerca',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcercaComponent implements OnInit {
 
-  constructor() { }
+  constructor(public servicio: InfoPaginaService) { }
 
   ngOnInit() {
   }

@@ -16,10 +16,10 @@ export class MenuComponent implements OnInit {
       name: "Acerca",
       path: "/acerca"
     },
-    {
-      name: "Servicios",
-      path: "/servicios"
-    },
+    //{
+    //  name: "Servicios",
+    //  path: "/servicios"
+    //},
     {
       name: "Portafolio",
       path: "/portafolio"
