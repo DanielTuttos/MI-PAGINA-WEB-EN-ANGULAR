@@ -22,7 +22,7 @@ export class InfoPaginaService {
       .subscribe(resp => {
         this.cargada = true;
         this.info = resp;
-        console.log(this.info);
+        //console.log(this.info);
       });
 
   }
@@ -31,7 +31,7 @@ export class InfoPaginaService {
     this.http.get('https://danielromeroag.firebaseio.com/servicios.json')
       .subscribe((data: any) => {
         this.servicios = data;
-        console.log(this.servicios);
+        //console.log(this.servicios);
       })
   }
 

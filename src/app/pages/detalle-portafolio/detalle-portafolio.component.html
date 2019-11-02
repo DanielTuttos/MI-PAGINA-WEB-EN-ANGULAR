@@ -3,10 +3,11 @@
     <div class="banner_inner d-flex align-items-center">
         <div class="container">
             <div class="banner_content text-center">
-                <h2>Portafolio</h2>
+                <h2>Detalle portafolio</h2>
                 <div class="page_link">
                     <a [routerLink]="['/inicio']">Inicio</a>
-                    <a>Portafolio</a>
+                    <a [routerLink]="['/portafolio']">Portafolio</a>
+                    <a>Detalle Portafolio</a>
                 </div>
             </div>
         </div>
@@ -14,29 +15,51 @@
 </section>
 <!--================ End Banner Area =================-->
 
-<!--================Start Portfolio Area =================-->
+<!--================Start Portfolio Details Area =================-->
+<section class="portfolio_details_area section_gap">
+    <div class="container">
+        <div class="portfolio_details_inner">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="left_img">
+                        <img class="img-fluid" [src]="portafolio.img_principal" alt="">
+                    </div>
+                </div>
+                <div class="offset-lg-1 col-lg-5">
+                    <div class="portfolio_right_text mt-30">
+                        <h4 class="text-uppercase">{{portafolio.nombre}}</h4>
+                        <p *ngFor="let parrafo of portafolio.parrafos">
+                            {{parrafo.parrafo}}
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Portfolio Details Area =================-->
+
+<!--================Start galeria Area =================-->
 <section class="portfolio_area section_gap_top" id="portfolio">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <div class="main_title text-left">
-                    <h2>Proyectos recientes </h2>
+                    <h2>Galería </h2>
                 </div>
             </div>
         </div>
 
         <div class="filters-content">
             <div class="row portfolio-grid justify-content-center">
-                <div class="col-lg-4 col-md-6 all latest" *ngFor="let portafolio of portafolios.portafolio">
-                    <!--a este se aplica ngfor-->
-                    <a [routerLink]="['/portafolio-detalle/proyecto', portafolio.id]">
+                <div class="col-lg-4 col-md-6 all latest" *ngFor="let galeria of portafolio.galeria">
+                    
+                    <a>
                         <div class="portfolio_box">
                             <div class="single_portfolio">
-                                <img class="img-fluid w-100" [src]="portafolio.img_principal" alt="">
+                                <img class="img-fluid w-100" [src]="galeria.img" alt="">
                                 <div class="overlay"></div>
-                            </div>
-                            <div class="short_info">
-                                <h4><a>{{portafolio.nombre}}</a></h4>
                             </div>
                         </div>
                     </a>
@@ -45,7 +68,7 @@
         </div>
     </div>
 </section>
-<!--================End Portfolio Area =================-->
+<!--================End galeria Area =================-->
 
 <!--================ Start Newsletter Area =================-->
 <section class="newsletter_area">
